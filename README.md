@@ -21,6 +21,7 @@
 1. Terraform Playbook.
 #### Файл main.tf
 [Файл main.tf](https://github.com/Svalker1989/Otkazoystichivost_v_oblake/blob/main/main.tf)
+
 3. Скриншот статуса балансировщика и целевой группы.
 ![](https://github.com/Svalker1989/Otkazoystichivost_v_oblake/blob/main/Z1.PNG)
 4. Скриншот страницы, которая открылась при запросе IP-адреса балансировщика.
