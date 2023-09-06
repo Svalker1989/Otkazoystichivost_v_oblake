@@ -20,7 +20,6 @@
 В качестве результата пришлите:
 
 1. Terraform Playbook.
-#### Файл main.tf
 [Файл main.tf](https://github.com/Svalker1989/Otkazoystichivost_v_oblake/blob/main/main.tf)
 
 3. Скриншот статуса балансировщика и целевой группы.
