@@ -1,0 +1,26 @@
+#cloud-config
+#yaml файл для описания действий после разворачивания инфры
+disable_root: true 
+timezone: Europe/Moscow
+repo_update: true 
+repo_upgrade: true
+apt:
+  preserve_sources_list: true
+#указываем пакеты для установки через apt
+packages: 
+  - nginx 
+runcmd:
+  - [ systemctl, reload, nginxnginx.service ]
+#делаем сервис nginx автозапускаемым
+  - [ systemctl, enable, nginx.service ]
+  - [ systemctl, start, --no-block, nginx.service ]
+#прописываем hostname в index.html
+  - [ sh, -c, "echo $(hostname | cut -d '.' -f 1 ) > /var/www/html/index.html" ]
+  - [ sh, -c, "echo $(ip add) >> /var/www/html/index.html" ]
+users:
+  - name: user
+    groups: sudo
+    shell: /bin/bash
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    ssh-authorized-keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC6ql2czR4c7Tcf9AueTRX1F4mSnQPeV1sBJqlHZgnO1jgxy/1kGx/p+nTwW/DNTIPPaEfzUaOvo0C16sAUnwknbND/arxrb21fqyo143Sn75KsQkIvdVdxVfEqZAwpgwGgr1rI3LEGNb5bXxNuCakUZtnh1QZA5wlmMWJ6RQeF5EA4AtLYHHBaKTtUzrmU+2ZX/7preyyWbQ2v+5/2ktIq8DRSfzuT3kEwG7zEOCWanTNWI4p/07IfXpRgGKmM9JXf1Ete0nkf3FkeOAdrRLwbasIaWsOWLKr/x2IPvCm2vArLdKl0J41tWXrsS/e8vgRphV9XODWm6lH9eLPKbrCc3Wsy6Qi32pu8vN14tlrxRjqdLwwmy/COad+NWkbCi6PPE70ivlahx8M3tv3srqTvyNIaLJHou64AnIkYmgKYe62nQpKYAJIaH0KVdCNn7DzpVuPXogZMVr6g/cAc65s7Wc4541oURw9zKWdrR3JH8md7T3V/SxRh3HztUTwvSlM= root@Deb11-x64
