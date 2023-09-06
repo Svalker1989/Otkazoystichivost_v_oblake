@@ -22,6 +22,9 @@
 1. Terraform Playbook.
 [Файл main.tf](https://github.com/Svalker1989/Otkazoystichivost_v_oblake/blob/main/main.tf)
 
+#### файл с описанием метаданных
+[Файл metadata.yaml](https://github.com/Svalker1989/Otkazoystichivost_v_oblake/blob/main/metadata.yaml)
+
 3. Скриншот статуса балансировщика и целевой группы.
 ![](https://github.com/Svalker1989/Otkazoystichivost_v_oblake/blob/main/Z1.PNG)
 
