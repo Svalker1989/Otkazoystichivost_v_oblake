@@ -9,9 +9,9 @@ terraform {
 }
 #Указываем параметры подключения к облаку. Получил эти параметры через yc init
 provider "yandex" {
-  token     = "y0_AgAAAAATmoj0AATuwQAAAADkYIVtEZtVm3gCSq-eEjgVP7QZr_efYHk"
-  cloud_id  = "b1gl328j72hoingknj27"
-  folder_id = "b1gcqjd2qv0nc6pk0mhv"
+  token     = ""
+  cloud_id  = ""
+  folder_id = ""
   zone      = "ru-central1-b"
 }
 
